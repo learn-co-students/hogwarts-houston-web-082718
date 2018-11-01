@@ -21,17 +21,17 @@ export default class Hog extends Component {
         const w = hog['weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water']
 
             return (
-                <div onClick={ this.handleClick } >
+                <div className="ui link card" onClick={ this.handleClick } >
                 {this.state.select
-                ? <div>
-                    <div>Name: {hog.name}</div>
-                    <img src={ renderImage(hog.name) } />
+                ? <div className="ui card">
+                    <div className="ui header">{hog.name}</div>
+                    <img className="ui image" src={ renderImage(hog.name) } />
                   </div>
                 : <div>
-                    <div>Specialty: {hog.specialty}</div>
-                    <div>Weight: {Math.round(w * 309)}</div>
-                    <div>Greased: {String(hog.greased)}</div>
-                    <div>Highest Medal Achieved: {hog['highest medal achieved']}</div>
+                    <div className="ui header">Specialty: {hog.specialty}</div>
+                    <div className="ui description">Weight: {Math.round(w * 309)}</div>
+                    <div className="ui meta">Greased: {String(hog.greased)}</div>
+                    <div className="ui extra content">Highest Medal Achieved: {hog['highest medal achieved']}</div>
                   </div>
                 }
                 </div>

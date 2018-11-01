@@ -73,7 +73,7 @@ class App extends Component {
             <div className="App">
                 < Nav/>
                 <Filter handleChange={this.handleChange}/>
-                {this.state.hogs.map(hog=> <Hog hog={hog} renderImage={this.renderImage}/>)}
+                <div className="ui cards">{this.state.hogs.map(hog=> <Hog hog={hog} renderImage={this.renderImage}/>)}</div>
             </div>
         )
     }
