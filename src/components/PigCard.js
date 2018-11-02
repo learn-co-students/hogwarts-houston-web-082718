@@ -18,11 +18,11 @@ class PigCard extends Component {
       .join('_');
     return (
       <div className="pigTile" onClick={this.toggleShowDetails}>
+        <h3>{this.props.name}</h3>
         {this.state.showDetails ? (
           <PigDetails {...this.props} />
         ) : (
           <div>
-            <h1>{this.props.name}</h1>
             <img
               src={require('../hog-imgs/' + imageName + '.jpg')}
               alt="a slice of hog heaven"
