@@ -6,7 +6,8 @@ import PigsList from "./PigsList";
 
 class App extends Component {
   state = {
-    pigs: []
+    pigs: [],
+    greased: false
   };
 
   componentDidMount() {
@@ -18,35 +19,10 @@ class App extends Component {
     return hogs;
   };
 
-  // sortPigs = event => {
-  //   if (event.target.name === "name") {
-  //     const weightSort = this.state.pigs.sort(function(a, b) {
-  //       return a.value - b.value;
-  //     });
-  //     this.setState({
-  //       pigs: weightSort
-  //     });
-  //   }
-  //   const nameSort = this.state.pigs.sort(function(a, b) {
-  //     var nameA = a.name.toUpperCase();
-  //     var nameB = b.name.toUpperCase();
-  //     if (nameA < nameB) {
-  //       return -1;
-  //     }
-  //     if (nameA > nameB) {
-  //       return 1;
-  //     }
-  //     return 0;
-  //   });
-  //   this.setState({
-  //     pigs: nameSort
-  //   });
-  // };
-
   sortPigsByName = () => {
     this.state.pigs.sort(function(a, b) {
-      var nameA = a.name.toUpperCase(); // ignore upper and lowercase
-      var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+      var nameA = a.name.toUpperCase(); 
+      var nameB = b.name.toUpperCase(); 
       if (nameA < nameB) {
         return -1;
       }
@@ -78,12 +54,21 @@ class App extends Component {
   };
 
   showGreasedPigs = () => {
-    let greasedPigs = this.state.pigs.filter(pig => {
-      return pig.greased;
-    });
-    this.setState({
-      pigs: greasedPigs
-    });
+    if (!this.state.greased) {
+      let greasedPigs = this.state.pigs.filter(pig => {
+        return pig.greased;
+      });
+      this.setState({
+        pigs: greasedPigs,
+        greased: true
+      });
+      console.log(this.state)
+    } else {
+      this.setState({
+        pigs: hogs,
+        greased: false
+      })
+    }
   };
 
   render() {

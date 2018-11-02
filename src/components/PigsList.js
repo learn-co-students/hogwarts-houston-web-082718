@@ -5,7 +5,7 @@ import Pig from "./Pig.js";
 class PigsList extends Component {
   render() {
     return (
-      <div className="ui grid container">
+      <div className="ui link cards">
         {this.props.pigs.map((pig, idx) => {
           return <Pig key={idx} pig={pig} />;
         })}
