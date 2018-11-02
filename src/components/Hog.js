@@ -1,4 +1,3 @@
-import piggy from '../porco.png'
 import React from 'react'
 import { Component } from 'react'
 

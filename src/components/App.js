@@ -18,21 +18,18 @@ class App extends Component {
         switch (event.target.value) {
             case 'all':
             updateHog = this.renderAll()
-            this.setState({ hogs: updateHog })
                 break;
             case 'name':
             updateHog = this.renderName()
-            this.setState({ hogs: updateHog })
                 break;
             case 'weight':
             updateHog = this.renderWeight()
-            this.setState({ hogs: updateHog })
                 break;
             case 'greased':
             updateHog = this.renderGreased()
-            this.setState({ hogs: updateHog })
                 break;
         }
+        this.setState({ hogs: updateHog })
     }
 
     renderAll = () => {
